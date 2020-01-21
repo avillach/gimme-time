@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 10
+      nodejs: 12.x
     commands:
     - rm package-lock.json
     - npm install --silent --no-progress -g npm
@@ -18,8 +18,8 @@ phases:
     - npm run test
     - mkdir -p target/stg
     - mkdir target/prod
-    - serverless package --package target/stg --stage stg -v -r eu-central-1
-    - serverless package --package target/prod --stage prod -v -r eu-central-1
+    - serverless package --package target/stg --stage stg -v -r us-east-1
+    - serverless package --package target/prod --stage prod -v -r us-east-1
 
 artifacts:
   files:
